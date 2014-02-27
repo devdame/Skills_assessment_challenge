@@ -1,0 +1,18 @@
+<h2>Add a Skill</h2>
+
+<form id="add_skill" action="skills/new" method="post">
+  <p>Skill:
+  <select form="add_skill" name="proficiency[skill_id]">
+    <%Skill.all.each do |skill|%>
+      <option value="<%=skill.id%>"><%=skill.name%></option>
+    <%end%>
+  </select>
+  <p>Years of experience: <input type="text" name="proficiency[years]"></p>
+  <p>Are you formally educated in this skill?</p>
+  <p>
+    Yes: <input type="radio" name="proficiency[formal]" value="true">
+    No:<input type="radio" name="proficiency[formal]" value="false">
+  </p>
+  <p><input type="submit"></p>
+
+</form>

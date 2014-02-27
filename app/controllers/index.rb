@@ -56,3 +56,19 @@ post '/users' do
     erb :sign_up
   end
 end
+
+#----------- USERS -----------
+
+get '/skills' do
+  if session[:user_id]
+    erb :add_skills
+  else
+    erb :must_sign_in
+  end
+end
+
+post '/skills/new' do
+  params[:proficiency][:user_id] = session[:user_id]
+  Proficiency.create(params[:proficiency])
+  redirect to '/'
+end

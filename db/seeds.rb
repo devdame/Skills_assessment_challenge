@@ -19,3 +19,7 @@ design_skills.each do |skill|
 end
 
 # TODO: create associations between users and skills
+
+20.times do
+  Proficiency.create(user_id: rand(1..6), skill_id: rand(1..10), years: rand(1..20), formal: [true, false].sample)
+end
